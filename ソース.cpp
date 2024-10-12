@@ -146,6 +146,34 @@ bool TCP_Wrire(IPv4& In, T* D, size_t L, U* comment, size_t N) {
 
 	return false;
 }
+template<class T,class U>
+bool TCP_Read(IPv4& In, T* D, size_t L, U* comment, size_t N) {
+	IP_1st A;
+	IP_2nd B;
+	IP_3rd C;
+	IP_4th DD;
+	IP_1st E;
+	IP_2nd F;
+	IP_3rd G;
+	IP_4th H;
+
+	Read(In.Hard, (void*)A,  sizeof(A));
+	Read(In.Hard, (void*)B,  sizeof(B));
+	Read(In.Hard, (void*)C,  sizeof(C));
+	Read(In.Hard, (void*)DD,  sizeof(D));
+
+	Read(In.Hard, (void*)D, L * sizeof(T));
+	Read(In.Hard, (void*)comment, N*sizeof(U));
+
+	Read(In.Hard, (void*)E,  sizeof(A));
+	Read(In.Hard, (void*)F,  sizeof(B));
+	Read(In.Hard, (void*)G,  sizeof(C));
+	Read(In.Hard, (void*)H,  sizeof(D));
+
+	if (strcmp(S, "ok.")==0) { return true; }
+
+	return false;
+}
 bool DisConnect(IPv4& In) {
 	if (IsConnect(In.Hard) == false) { return false; }
 
