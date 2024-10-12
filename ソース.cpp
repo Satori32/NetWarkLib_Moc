@@ -1,4 +1,4 @@
-#include <stdio.h>
+/** /#include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 
@@ -224,25 +224,29 @@ bool DisConnect(IPv4& In) {
 	return true;
 }
 
+/**/
+
+#include "NetWarkLib.h"
+
 template<class T>
-bool ParseData(char S[], size_t L, T* T, size_t M) {
+bool ParseData(char S[], size_t L, T* D, size_t M) {
 	return false;
 }
 
 int main() {
-	IPv4 IP;
+	IPv4 IPe;
 	IP I = { 0, };
 
-	GetNetWarkHard(IP) = ConstructNetWarkHaed(8);
-	if (Connect(IP, I) = false) { return -1; }
+	GetNetWarkHard(IPe) = ConstructNetWarkHaed(8);
+	if (Connect(IPe, I) == false) { return -1; }
 
-	char S[10240] = { 0. };
+	char S[10240] = { 0, };
 	char S2[10240] = { 0, };
 
-	Read(IP, S, sizeof(S));
+	Read(IPe, S, sizeof(S));
 	ParseData(S, sizeof(S), S2, sizeof(S2));
 
-	DisConnect(IP);
+	DisConnect(IPe);
 
 	return 0;
 }
