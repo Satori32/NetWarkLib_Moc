@@ -26,21 +26,23 @@ struct IP_1st
 {
 	char S[13] = "TRANCEPORT1";
 	char U = 2;
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[80] = {0,};
+	char coment[80] = {0,};
 };
 struct  IP_2nd
 {
 	char S[13] = "TRANCEPORT2";
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[32] = {0,};
+	char coment[256] = {0,};
+
 };
 struct IP_3rd
 {
 	char S[13] = "TRANCEPORT3";
 	int U[40] = { 0, };
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[32] = {0,};
+	char coment[256] = {0,};
+
 };
 struct  IP_4th//this code about 4th layer.
 {
@@ -49,26 +51,29 @@ struct  IP_4th//this code about 4th layer.
 struct  IP_5th
 {
 	char S[13] = "TRANCEPORT5";
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[32] = {0,};
+	char coment[256] = {0,};
+
 };
 struct  IP_6th
 {
 	char S[13] = "TRANCEPORT6";
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[32] = {0,};
+	char coment[256] = {0,};
+
 };
 struct  IP_7th
 {
 	char S[13] = "TRANCEPORT7";
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[32] = {0,};
+	char coment[256] = {0,};
+
 };
 struct  IP_8th
 {
 	char S[13] = "TRANCEPORT8";
-	char* Title = NULL;
-	char* coment = NULL;
+	char Title[32] = {0,};
+	char coment[256] = {0,};
 
 };
 
