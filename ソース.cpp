@@ -224,9 +224,25 @@ bool DisConnect(IPv4& In) {
 	return true;
 }
 
+template<class T>
+bool ParseData(char S[], size_t L, T* T, size_t M) {
+	return false;
+}
+
 int main() {
 	IPv4 IP;
+	IP I = { 0, };
 
 	GetNetWarkHard(IP) = ConstructNetWarkHaed(8);
-	Connect(IP);
+	if (Connect(IP, I) = false) { return -1; }
+
+	char S[10240] = { 0. };
+	char S2[10240] = { 0, };
+
+	Read(IP, S, sizeof(S));
+	ParseData(S, sizeof(S), S2, sizeof(S2));
+
+	DisConnect(IP);
+
+	return 0;
 }
