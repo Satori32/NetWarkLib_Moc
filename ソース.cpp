@@ -75,18 +75,33 @@ bool IsConnect(NetWarkHard N) {
 NetWarkHard& GetNetWarkHard(IPv4& In) {
 	return In.Hard;
 }
-bool Connect(IPv4& In) {
+
+IP ParseIP(char T[], size_t L) {
+	IP IP;
+
+	return IP;
+}
+
+bool Connect(IPv4& In,IP IP) {
 	if (IsConnect(In.Hard) == false) { return false; }
 
 	char T[10240] = { 0, };
+	IP I;
 
-	sprintf(T, "Hello IRQ%d. I want Connect To \"#d,#d,#d,#d\". are you ok?", 8, In.IP.IP[0], In.IP.IP[1], In.IP.IP[2], In.IP.IP[3]);
 
 	Write(In.Hard, T,sizeof(T));
 
 	Read(In.Hard, T, sizeof(T));
 
 	if (strcmp(T, "ok.")==0) { return true; }
+
+	sprintf(T, "Where is connect? Please tell me.");
+	Write(In.Hard, T,sizeof(T));
+	Read(In.Hard, T, sizeof(T));
+
+	I = ParseIP(T, sizeof(T));
+
+	IP.IP = I;
 
 	return false;
 }
@@ -194,4 +209,5 @@ int main() {
 	IPv4 IP;
 
 	GetNetWarkHard(IP) = ConstructNetWarkHaed(8);
+	Connect(IP);
 }
