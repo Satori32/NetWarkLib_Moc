@@ -58,8 +58,9 @@ struct  IP_8th
 
 };
 
-bool ConstructNetWarkHaed(int IRQ) {
-	return false;
+NetWarkHard ConstructNetWarkHaed(int IRQ) {
+	NetWarkHard N;
+	return N;
 }
 
 bool Write(NetWarkHard N, void* T, size_t L) {
@@ -71,7 +72,9 @@ bool Read(NetWarkHard N, void* T, size_t L) {
 bool IsConnect(NetWarkHard N) {
 	return false;
 }
-
+NetWarkHard& GetNetWarkHard(IPv4& In) {
+	return In.Hard;
+}
 bool Connect(IPv4& In) {
 	if (IsConnect(In.Hard) == false) { return false; }
 
@@ -185,4 +188,10 @@ bool DisConnect(IPv4& In) {
 	if (strcmp(S, "ok.")!=0) { printf("%s", S); }
 	
 	return true;
+}
+
+int main() {
+	IPv4 IP;
+
+	GetNetWarkHard(IP) = ConstructNetWarkHaed(8);
 }
